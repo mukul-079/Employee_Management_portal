@@ -1,0 +1,45 @@
+{% extends 'Base.html' %}
+{% block title %}
+ Home Page
+{% endblock %}
+{% block content %}
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+           {% for category, message in messages %}
+              <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  {{ message }}
+              </div>
+           {% endfor %}
+        {% endif %}
+      {% endwith %}
+
+       <table class="table-light bg-white" border="0" style="margin:2vh">
+          <tr>
+            <td width=auto>
+                <div class="container">
+                    <b><h1 style="font-size:5vw;" class="display-4">Welcome to Our Organization</h1></b>
+                    <p class="lead" style="margin:10px">
+                        <a href="/" class="btn btn-info">
+                            More Details
+                        </a>
+                    </p>
+                </div>
+            </td>
+              <td width=auto>
+                <div>
+                    <image src="https://img.freepik.com/free-vector/communication-flat-icon_1262-18771.jpg" class="img-fluid" alt="Responsive image"/>
+                </div>
+              </td>
+          </tr>
+       </table>
+
+        <!--Footer part-->
+        <footer class="container-fluid page-footer bg-secondary" style="margin-top:100px">
+            <div class="text-center text-white">
+                <strong>
+                    <p>© Copyright 2021-2022 by Employee Organization</p>
+                </strong>
+            </div>
+        </footer>
+{% endblock %}
